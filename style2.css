@@ -1,0 +1,249 @@
+﻿@charset "utf-8";
+
+/* ユニバーサルセレクタで余白リセット */
+* {
+	margin: 0;/* */
+	padding: 0;
+}
+
+/*全体の文字の文字型を指定する。第一候補、第二候補決める。第一候補がない場合に第二候補になる。*/
+body{
+	font-family:"遊明朝",YuMicho,"ヒラギノ明朝 ProN W3","Hiragino Mincho ProN","HG明朝E","MS P明朝","MS 明朝",serif;
+}
+
+/*サイト共通コンテナ*/
+.container{
+	max-width: 1000px;/*コンテナーの最大pxを1000pxに*/
+	margin: 0 auto;/*上下の余白をゼロに,左右をautoにする*/ 
+}
+
+h2{
+	font-size: 2.0em;
+}
+
+/*ダミーの要素。floatを解除するため？？*/
+.clearlist{
+	content: "";/*空*/
+	display: block;/*ブロックにする*/
+	clear: both;/*float解除*/
+}
+
+/*本格イタリアン料理店の図*/
+#sise_logo{
+	float: left;/*floatを使って左に寄せる*/
+	width: 65%;/*幅は全体の65％*/
+}
+
+/*電話番号の図*/
+#size_reserve{
+	float: right;
+	width: 35%;/*これでsise_logo+sise_reserve=100%*/
+	text-align:right;/*電話番号の文字を右寄せ*/
+	margin: top 10px;/*上余白を10pxで設定*/
+}
+
+/*電話の文字*/
+.site_tel{
+	font-size : 1.5em;/*標準サイズの1.5倍で表示*/
+	color: #c20023;/*文字の色*/
+}
+
+nav{
+	background-color: #c20023;
+}
+
+nav ul {
+	list-style: none;
+}
+
+nav ul::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+nav li {
+	float: left;
+	width: 25%;
+	text-align: center;
+}
+
+nav a {
+	display: block;
+	text-decoration: none;
+	color: #fff;
+}
+
+nav a:hover {
+	opacity: 0.7;
+}
+
+/*メイン部スタイル設定*/
+#main_image img {
+	width: 100%;
+}
+
+#concept{
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+#concept_logo {
+	margin-bottom: -40px;
+}
+
+#concept h2 {
+	margin-right: 25px;
+}
+
+#concept p {
+	width: 500px;
+	margin: 0 auto;
+}
+
+#menu {
+	background-color: #f5fffa;
+	text-align: center;
+}
+
+#menu_logo {
+	margin-bottom: -40px;
+}
+
+.menu_box {
+	width: 29%;
+	float: left;
+	margin-left: 3%;
+	margin-bottom: 30px;
+}
+
+.menu_box img {
+	width: 100%;
+	max-width: 300px;
+}
+.menu_box ul {
+	text-align: left;
+	font-size: 0.8em;
+	margin-left: 25px;
+}
+
+#access {
+	text-align: center;
+}
+
+#access iframe {
+	width: 70%;
+}
+#access_logo {
+	margin-bottom: -40px;
+}
+
+#access_map {
+	float: left;
+	width: 50%;
+}
+
+#access_txt {
+	float: right;
+	width: 50%;
+	text-align: left;
+	margin-top: 60px;
+}
+
+#access_reserve {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+footer {
+	background-color: #c20023;
+	color: #fff;
+	text-align: center;
+}
+
+@media only screen and (max-width: 680px){
+	
+	/*サイト共通コンテナ*/
+	.container {
+		margin: 0 10px;
+	}
+
+	#site_logo {
+		float: none;
+		width: 100%;
+	}
+
+	#site_logo img {
+		width: 90%;
+		max-width: 420px;
+	}
+	#site_reserve {
+		float: none;
+		width: 100%;
+		font-size: 0.8em;
+		margin-top: 0;
+		margin-bottom: 10px;
+	}
+
+	.site_tel {
+		font-size: 1.2em;
+	}
+	nav a {
+		font-size: 0.8em;
+	}
+
+	#concept_logo {
+		width: 70%;
+	}
+	#concept h2 {
+		font-size: 1.5em;
+	}
+	#concept_icon {
+		width: 70%;
+	}
+	#concept p {
+		font-size: 0.8em;
+		width: 100%;
+	}
+
+	#menu_logo {
+		width: 70%;
+	}
+
+	.menu_box {
+		float: none;
+		width: 100%;
+		margin: 0;
+	}
+
+	.menu_box img {
+		max-width: 480px;
+	}
+	.menu_box ul {
+		margin: 0 30px;
+	}
+
+	#access_logo {
+		width: 70%;
+	}
+	
+	#access_map {
+		float: none;
+		width: 100%;
+	}
+
+	#access_txt {
+		float: none;
+		width: 90%;
+		margin-left: 30px;
+	}
+
+	#access iframe {
+		width: 100%;
+	}
+
+	footer img {
+		width: 90%;
+	}
+}
+
