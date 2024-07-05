@@ -1,5 +1,102 @@
 ﻿@charset "utf-8";
 
+  /* ここから下がハンバーガーメニューに関するCSS */
+	
+  /* チェックボックスを非表示にする */
+  .drawer_hidden {
+	display: none;
+  }
+  
+  /* ハンバーガーアイコンの設置スペース */
+  .drawer_open {
+	display: flex;/* 親要素に対して子要素を横並びにする 」機能*/
+	justify-content: center;/*中央寄せ*/
+	align-items: center;/*flexアイテムを縦軸で見たときに「上下のどこで揃えるか」を指定するプロパティです*/
+	position: absolute;/*絶対位置ということで、周囲の他の要素の配置を無視することができます*/
+	left: 20px;/*左に表示*/
+	z-index: 100;/* 重なり順を一番上にする */
+	cursor: pointer;
+	height: 45px;
+	
+  }
+  
+  /* ハンバーガーメニューのアイコン */
+  .drawer_open span,
+  .drawer_open span:before,
+  .drawer_open span:after {
+	content: '';
+	display: block;
+	height: 3px;
+	width: 25px;
+	border-radius: 3px;
+	background: #333;
+	transition: 0.5s;
+	position: absolute;
+  }
+  
+  /* 三本線の一番上の棒の位置調整 */
+  .drawer_open span:before {
+	bottom: 10px;
+  }
+  
+  /* 三本線の一番下の棒の位置調整 */
+  .drawer_open span:after {
+	top: 10px;
+  }
+  
+  /* アイコンがクリックされたら真ん中の線を透明にする */
+  #drawer_input:checked ~ .drawer_open span {
+	background: rgba(255, 255, 255, 0);
+  }
+  
+  /* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+  #drawer_input:checked ~ .drawer_open span::before {
+	bottom: 0;
+	transform: rotate(45deg);
+  }
+  
+  #drawer_input:checked ~ .drawer_open span::after {
+	top: 0;
+	transform: rotate(-45deg);
+  }
+	
+  /* メニューのデザイン*/
+  .nav_content {
+	width: 20%;
+	height: 100%;
+	position: fixed;
+	top: 0%;
+	right: 100%; /* メニューを画面の外に飛ばす */
+	z-index: 99;
+	background: rgb(255, 230, 230);
+	transition: .5s;
+	text-align: center;
+	padding-top: 20px;
+  }
+  
+  
+  /* アイコンがクリックされたらメニューを表示 */
+  #drawer_input:checked ~ .nav_content {
+	bottom: 0;/* メニューを画面に入れる */
+	
+  }
+  /* メニュー黒ポチを消す */
+  .nav_list {
+	list-style: none;
+  }
+  
+  /* アイコンがクリックされたらメニューを表示 */
+  #drawer_input:checked ~ .nav_content {
+	left: 0;/* メニューを画面に入れる */
+  }
+
+
+
+
+
+
+  
+
 /* ユニバーサルセレクタで余白リセット */
 * {
 	margin: 0;/* */
